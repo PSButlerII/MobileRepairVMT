@@ -31,7 +31,7 @@ namespace MobileRepairMT.Controllers
         }
         // get Product by id TESTED
         [HttpGet("{id}")]
-        public IActionResult GetMerchById(int id)
+        public IActionResult GetProductById(int id)
         {
             var product = _context.Products.Find(id);
             if (product == null)
@@ -40,7 +40,25 @@ namespace MobileRepairMT.Controllers
             }
             return Ok(product);
         }
+        // post or "add" new product to database TESTED
+        [HttpPost, Authorize]
+        public IActionResult Post([FromBody] Product value)
+        {
+            _context.Products.Add(value);
+            _context.SaveChanges();
+            return StatusCode(201, value);
+        }
+        
 
+        // delete product by id TESTED 
+        [HttpDelete("{id}")]
+        public IActionResult Remove(int id)
+        {
+            var product = _context.Products.Find(id);
+            _context.Products.Remove(product);
+            _context.SaveChanges();
+            return Ok(product);
+        }
     }
 
 

@@ -39,7 +39,7 @@ namespace MobileRepairMT.Controllers
         [HttpGet("{productid}")]
         public IActionResult GetReviewById(int productId)
         {
-            var reviews = _context.Reviews.Where(r => r.ProductId == productId).Include(r => r.User).Include(r => r.Product).
+            var reviews = _context.Reviews.Where(r => r.ProductId == productId).Include(r => r.User).Include(r => r.Product.Description).
                  Select(r => new { productId = r.ProductId, name = r.Product.Name, userId = r.UserId, rating = r.Rating, userreview = r.UserReview, userName = r.User.UserName });
             if (reviews == null)
             {

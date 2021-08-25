@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "eCommerceStarterCode": {
+    "MobileVMT": {
       "commandName": "Project",
       "launchBrowser": false,
       "launchUrl": "",

@@ -20,7 +20,7 @@ namespace MobileRepairMT.Models
 
         [ForeignKey("ShopService")]
         public int ServiceId { get; set; }
-        public ShopService Service { get; set; }
+        public ShopService ShopService { get; set; }
 
         [Key]
         public string UserReview { get; set; }

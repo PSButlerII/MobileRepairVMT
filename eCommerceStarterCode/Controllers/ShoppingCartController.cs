@@ -23,25 +23,25 @@ namespace MobileRepairMT.Controllers
 
 
         // Get by UserId
-        [HttpGet("{UserId}")]
-        public IActionResult Get([FromBody] ShoppingCart value)
-        {
-            var shoppingCart = _context.ShoppingCarts;
-            var specificUserCart = shoppingCart.Where(sc => sc.UserId == value.UserId);
-            return Ok(specificUserCart);
-        }
+        //[HttpGet("{UserId}")]
+        //public IActionResult Get([FromBody] ShoppingCart value)
+        //{
+        //    var shoppingCart = _context.ShoppingCarts;
+        //    var specificUserCart = shoppingCart.Where(sc => sc.UserId == value.UserId);
+        //    return Ok(specificUserCart);
+        //}
 
 
-        [HttpGet("{UserId}")]
-        public IActionResult GetShoppingCartByUserId(string UserId)
-        {
-            var ShoppingCart = _context.ShoppingCarts.Where(sc => sc.UserId == UserId);
-            if (ShoppingCart == null)
-            {
-                return NotFound();
-            }
-            return Ok(ShoppingCart);
-        }
+        //[HttpGet("{UserId}")]
+        //public IActionResult GetShoppingCartByUserId(string UserId)
+        //{
+        //    var ShoppingCart = _context.ShoppingCarts.Where(sc => sc.UserId == UserId);
+        //    if (ShoppingCart == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return Ok(ShoppingCart);
+        //}
         [HttpPost, Authorize]
         public IActionResult Post([FromBody] ShoppingCart value)
         {
