@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace eCommerceStarterCode.DataTransferObjects
+namespace MobileRepairMT.DataTransferObjects
 {
     public class UserForRegistrationDto
     {

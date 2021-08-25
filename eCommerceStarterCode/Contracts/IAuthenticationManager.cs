@@ -1,10 +1,10 @@
-﻿using eCommerceStarterCode.DataTransferObjects;
+﻿using MobileRepairMT.DataTransferObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace eCommerceStarterCode.Contracts
+namespace MobileRepairMT.Contracts
 {
     public interface IAuthenticationManager
     {

@@ -1,6 +1,6 @@
-﻿using eCommerceStarterCode.Contracts;
-using eCommerceStarterCode.DataTransferObjects;
-using eCommerceStarterCode.Models;
+﻿using MobileRepairMT.Contracts;
+using MobileRepairMT.DataTransferObjects;
+using MobileRepairMT.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -11,7 +11,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eCommerceStarterCode.Managers
+namespace MobileRepairMT.Managers
 {
     public class AuthenticationManager : IAuthenticationManager
     {

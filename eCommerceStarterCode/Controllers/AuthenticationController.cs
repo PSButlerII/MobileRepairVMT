@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
-using eCommerceStarterCode.ActionFilters;
-using eCommerceStarterCode.Contracts;
-using eCommerceStarterCode.DataTransferObjects;
-using eCommerceStarterCode.Models;
+using MobileRepairMT.ActionFilters;
+using MobileRepairMT.Contracts;
+using MobileRepairMT.DataTransferObjects;
+using MobileRepairMT.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace eCommerceStarterCode.Controllers
+namespace MobileRepairMT.Controllers
 {
     [Route("api/authentication")]
     [ApiController]
@@ -33,7 +33,7 @@ namespace eCommerceStarterCode.Controllers
             var result = await _userManager.CreateAsync(user, userForRegistration.Password);
             if (!result.Succeeded)
             {
-                foreach(var error in result.Errors)
+                foreach (var error in result.Errors)
                 {
                     ModelState.TryAddModelError(error.Code, error.Description);
                 }
@@ -47,7 +47,7 @@ namespace eCommerceStarterCode.Controllers
         [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> Authenticate([FromBody] UserForAuthenticationDto user)
         {
-            if(!await _authManager.ValidateUser(user))
+            if (!await _authManager.ValidateUser(user))
             {
                 return Unauthorized();
             }

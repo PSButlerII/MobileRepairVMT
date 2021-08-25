@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using eCommerceStarterCode.DataTransferObjects;
-using eCommerceStarterCode.Models;
+using MobileRepairMT.DataTransferObjects;
+using MobileRepairMT.Models;
 
-namespace eCommerceStarterCode.Managers
+namespace MobileRepairMT.Managers
 {
     public class MappingProfile : Profile
     {

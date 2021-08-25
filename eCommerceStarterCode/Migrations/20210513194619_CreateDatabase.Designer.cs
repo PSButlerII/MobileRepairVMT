@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using eCommerceStarterCode.Data;
+using MobileRepairMT.Data;
 
-namespace eCommerceStarterCode.Migrations
+namespace MobileRepairMT.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20210513194619_CreateDatabase")]
@@ -152,7 +152,7 @@ namespace eCommerceStarterCode.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("eCommerceStarterCode.Models.User", b =>
+            modelBuilder.Entity("MobileRepairMT.Models.User", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -234,7 +234,7 @@ namespace eCommerceStarterCode.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("eCommerceStarterCode.Models.User", null)
+                    b.HasOne("MobileRepairMT.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -243,7 +243,7 @@ namespace eCommerceStarterCode.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("eCommerceStarterCode.Models.User", null)
+                    b.HasOne("MobileRepairMT.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -258,7 +258,7 @@ namespace eCommerceStarterCode.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("eCommerceStarterCode.Models.User", null)
+                    b.HasOne("MobileRepairMT.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -267,7 +267,7 @@ namespace eCommerceStarterCode.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("eCommerceStarterCode.Models.User", null)
+                    b.HasOne("MobileRepairMT.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)

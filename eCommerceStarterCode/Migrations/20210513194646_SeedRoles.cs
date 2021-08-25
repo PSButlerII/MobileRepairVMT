@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace eCommerceStarterCode.Migrations
+namespace MobileRepairMT.Migrations
 {
     public partial class SeedRoles : Migration
     {

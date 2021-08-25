@@ -1,5 +1,5 @@
-﻿using eCommerceStarterCode.Data;
-using eCommerceStarterCode.Models;
+﻿using MobileRepairMT.Data;
+using MobileRepairMT.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -8,7 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
-namespace eCommerceStarterCode.Extensions
+namespace MobileRepairMT.Extensions
 {
     public static class ServiceExtensions
     {

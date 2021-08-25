@@ -4,12 +4,12 @@ using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using eCommerceStarterCode.ActionFilters;
-using eCommerceStarterCode.Contracts;
-using eCommerceStarterCode.Extensions;
-using eCommerceStarterCode.Managers;
+using MobileRepairMT.ActionFilters;
+using MobileRepairMT.Contracts;
+using MobileRepairMT.Extensions;
+using MobileRepairMT.Managers;
 
-namespace eCommerceStarterCode
+namespace MobileRepairMT
 {
     public class Startup
     {

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace eCommerceStarterCode.Configuration
+namespace MobileRepairMT.Configuration
 {
     public class RolesConfiguration : IEntityTypeConfiguration<IdentityRole>
     {

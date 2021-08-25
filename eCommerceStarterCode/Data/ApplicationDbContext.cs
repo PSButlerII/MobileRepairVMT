@@ -1,9 +1,9 @@
-﻿using eCommerceStarterCode.Configuration;
-using eCommerceStarterCode.Models;
+﻿using MobileRepairMT.Configuration;
+using MobileRepairMT.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace eCommerceStarterCode.Data
+namespace MobileRepairMT.Data
 {
     public class ApplicationDbContext : IdentityDbContext<User>
     {

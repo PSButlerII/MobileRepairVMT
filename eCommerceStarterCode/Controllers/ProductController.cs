@@ -1,5 +1,5 @@
-﻿using eCommerceStarterCode.Data;
-using eCommerceStarterCode.Models;
+﻿using MobileRepairMT.Data;
+using MobileRepairMT.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace eCommerceStarterCode.Controllers
+namespace MobileRepairMT.Controllers
 {
 
     [Route("api/Products")]

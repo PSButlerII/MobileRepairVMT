@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 
 
-namespace eCommerceStarterCode.Models
+namespace MobileRepairMT.Models
 {
     public class ShoppingCart
     {   

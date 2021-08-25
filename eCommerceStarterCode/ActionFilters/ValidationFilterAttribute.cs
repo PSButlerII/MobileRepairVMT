@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Filters;
 using System.Linq;
 
-namespace eCommerceStarterCode.ActionFilters
+namespace MobileRepairMT.ActionFilters
 {
     public class ValidationFilterAttribute : IActionFilter
     {

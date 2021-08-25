@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using eCommerceStarterCode.Data;
+using MobileRepairMT.Data;
 
-namespace eCommerceStarterCode.Migrations
+namespace MobileRepairMT.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20210824203407_NewDatabaseTables")]
@@ -168,7 +168,7 @@ namespace eCommerceStarterCode.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("eCommerceStarterCode.Models.CustomerLti", b =>
+            modelBuilder.Entity("MobileRepairMT.Models.CustomerLti", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -335,7 +335,7 @@ namespace eCommerceStarterCode.Migrations
                     b.ToTable("CustomerLtis");
                 });
 
-            modelBuilder.Entity("eCommerceStarterCode.Models.Lti", b =>
+            modelBuilder.Entity("MobileRepairMT.Models.Lti", b =>
                 {
                     b.Property<int>("LtiId")
                         .ValueGeneratedOnAdd()
@@ -502,7 +502,7 @@ namespace eCommerceStarterCode.Migrations
                     b.ToTable("Ltis");
                 });
 
-            modelBuilder.Entity("eCommerceStarterCode.Models.Product", b =>
+            modelBuilder.Entity("MobileRepairMT.Models.Product", b =>
                 {
                     b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd()
@@ -523,7 +523,7 @@ namespace eCommerceStarterCode.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("eCommerceStarterCode.Models.ProductShoppingCart", b =>
+            modelBuilder.Entity("MobileRepairMT.Models.ProductShoppingCart", b =>
                 {
                     b.Property<int>("ProductShoppingCartId")
                         .ValueGeneratedOnAdd()
@@ -545,7 +545,7 @@ namespace eCommerceStarterCode.Migrations
                     b.ToTable("ProductShoppingCarts");
                 });
 
-            modelBuilder.Entity("eCommerceStarterCode.Models.Review", b =>
+            modelBuilder.Entity("MobileRepairMT.Models.Review", b =>
                 {
                     b.Property<string>("UserReview")
                         .HasColumnType("nvarchar(450)");
@@ -573,7 +573,7 @@ namespace eCommerceStarterCode.Migrations
                     b.ToTable("Reviews");
                 });
 
-            modelBuilder.Entity("eCommerceStarterCode.Models.ServiceShoppingCart", b =>
+            modelBuilder.Entity("MobileRepairMT.Models.ServiceShoppingCart", b =>
                 {
                     b.Property<int>("ServiceShoppingCartId")
                         .ValueGeneratedOnAdd()
@@ -598,7 +598,7 @@ namespace eCommerceStarterCode.Migrations
                     b.ToTable("ServiceShoppingCarts");
                 });
 
-            modelBuilder.Entity("eCommerceStarterCode.Models.ShopService", b =>
+            modelBuilder.Entity("MobileRepairMT.Models.ShopService", b =>
                 {
                     b.Property<int>("ShopServiceId")
                         .ValueGeneratedOnAdd()
@@ -619,7 +619,7 @@ namespace eCommerceStarterCode.Migrations
                     b.ToTable("ShopServices");
                 });
 
-            modelBuilder.Entity("eCommerceStarterCode.Models.ShoppingCart", b =>
+            modelBuilder.Entity("MobileRepairMT.Models.ShoppingCart", b =>
                 {
                     b.Property<int>("ShoppingCartId")
                         .ValueGeneratedOnAdd()
@@ -645,7 +645,7 @@ namespace eCommerceStarterCode.Migrations
                     b.ToTable("ShoppingCarts");
                 });
 
-            modelBuilder.Entity("eCommerceStarterCode.Models.User", b =>
+            modelBuilder.Entity("MobileRepairMT.Models.User", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -727,7 +727,7 @@ namespace eCommerceStarterCode.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("eCommerceStarterCode.Models.User", null)
+                    b.HasOne("MobileRepairMT.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -736,7 +736,7 @@ namespace eCommerceStarterCode.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("eCommerceStarterCode.Models.User", null)
+                    b.HasOne("MobileRepairMT.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -751,7 +751,7 @@ namespace eCommerceStarterCode.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("eCommerceStarterCode.Models.User", null)
+                    b.HasOne("MobileRepairMT.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -760,40 +760,40 @@ namespace eCommerceStarterCode.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("eCommerceStarterCode.Models.User", null)
+                    b.HasOne("MobileRepairMT.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("eCommerceStarterCode.Models.CustomerLti", b =>
+            modelBuilder.Entity("MobileRepairMT.Models.CustomerLti", b =>
                 {
-                    b.HasOne("eCommerceStarterCode.Models.User", "Owner")
+                    b.HasOne("MobileRepairMT.Models.User", "Owner")
                         .WithMany()
                         .HasForeignKey("OwnerId");
 
                     b.Navigation("Owner");
                 });
 
-            modelBuilder.Entity("eCommerceStarterCode.Models.Lti", b =>
+            modelBuilder.Entity("MobileRepairMT.Models.Lti", b =>
                 {
-                    b.HasOne("eCommerceStarterCode.Models.User", "Owner")
+                    b.HasOne("MobileRepairMT.Models.User", "Owner")
                         .WithMany()
                         .HasForeignKey("OwnerId");
 
                     b.Navigation("Owner");
                 });
 
-            modelBuilder.Entity("eCommerceStarterCode.Models.ProductShoppingCart", b =>
+            modelBuilder.Entity("MobileRepairMT.Models.ProductShoppingCart", b =>
                 {
-                    b.HasOne("eCommerceStarterCode.Models.Product", "Product")
+                    b.HasOne("MobileRepairMT.Models.Product", "Product")
                         .WithMany("ShoppingCarts")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("eCommerceStarterCode.Models.ShoppingCart", "ShoppingCart")
+                    b.HasOne("MobileRepairMT.Models.ShoppingCart", "ShoppingCart")
                         .WithMany()
                         .HasForeignKey("ShoppingCartId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -804,21 +804,21 @@ namespace eCommerceStarterCode.Migrations
                     b.Navigation("ShoppingCart");
                 });
 
-            modelBuilder.Entity("eCommerceStarterCode.Models.Review", b =>
+            modelBuilder.Entity("MobileRepairMT.Models.Review", b =>
                 {
-                    b.HasOne("eCommerceStarterCode.Models.Product", "Product")
+                    b.HasOne("MobileRepairMT.Models.Product", "Product")
                         .WithMany("Reviews")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("eCommerceStarterCode.Models.ShopService", "Service")
+                    b.HasOne("MobileRepairMT.Models.ShopService", "Service")
                         .WithMany()
                         .HasForeignKey("ServiceId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("eCommerceStarterCode.Models.User", "User")
+                    b.HasOne("MobileRepairMT.Models.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
 
@@ -829,13 +829,13 @@ namespace eCommerceStarterCode.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("eCommerceStarterCode.Models.ServiceShoppingCart", b =>
+            modelBuilder.Entity("MobileRepairMT.Models.ServiceShoppingCart", b =>
                 {
-                    b.HasOne("eCommerceStarterCode.Models.Product", "Product")
+                    b.HasOne("MobileRepairMT.Models.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId");
 
-                    b.HasOne("eCommerceStarterCode.Models.ShoppingCart", "ShoppingCart")
+                    b.HasOne("MobileRepairMT.Models.ShoppingCart", "ShoppingCart")
                         .WithMany()
                         .HasForeignKey("ShoppingCartId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -846,16 +846,16 @@ namespace eCommerceStarterCode.Migrations
                     b.Navigation("ShoppingCart");
                 });
 
-            modelBuilder.Entity("eCommerceStarterCode.Models.ShoppingCart", b =>
+            modelBuilder.Entity("MobileRepairMT.Models.ShoppingCart", b =>
                 {
-                    b.HasOne("eCommerceStarterCode.Models.User", "User")
+                    b.HasOne("MobileRepairMT.Models.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("eCommerceStarterCode.Models.Product", b =>
+            modelBuilder.Entity("MobileRepairMT.Models.Product", b =>
                 {
                     b.Navigation("Reviews");
 

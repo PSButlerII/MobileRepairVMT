@@ -1,5 +1,5 @@
-﻿using eCommerceStarterCode.Data;
-using eCommerceStarterCode.Models;
+﻿using MobileRepairMT.Data;
+using MobileRepairMT.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 
-namespace eCommerceStarterCode.Controllers
+namespace MobileRepairMT.Controllers
 {
     [Route("api/review")]
     [ApiController]
