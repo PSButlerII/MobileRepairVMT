@@ -7,7 +7,9 @@ using Microsoft.Extensions.Hosting;
 using MobileRepairMT.ActionFilters;
 using MobileRepairMT.Contracts;
 using MobileRepairMT.Extensions;
+using MobileRepairMT.Hubs;
 using MobileRepairMT.Managers;
+
 
 namespace MobileRepairMT
 {
@@ -32,6 +34,7 @@ namespace MobileRepairMT
             services.ConfigureJWT(Configuration);
             services.AddScoped<IAuthenticationManager, AuthenticationManager>();
             services.AddControllers();
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +60,7 @@ namespace MobileRepairMT
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<ChatHub>("/chatHub");
             });
         }
     }
