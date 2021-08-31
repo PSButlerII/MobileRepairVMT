@@ -39,10 +39,9 @@ namespace MobileRepairMT
             {
                 options.AddDefaultPolicy(builder =>
                 {
-                    builder.WithOrigins("http://localhost:3000")
-                    .AllowAnyHeader()
-                    .AllowCredentials()
-                    .AllowAnyMethod();
+                    const string Origins = "http://localhost:3000";
+                    builder.WithOrigins(Origins);
+                   
 
                 });
             });
