@@ -52,7 +52,7 @@ namespace MobileRepairMT.Controllers
 
         // PUT api/<CustomerLtisController>/5
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] CustomerLti value)
+        public IActionResult Put([FromBody] CustomerLti value)
         {
             _context.CustomerLtis.Update(value);
             _context.SaveChanges();

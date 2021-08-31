@@ -8,9 +8,18 @@ namespace MobileRepairMT.Hubs
 {
     public class ChatHub : Hub
     {
-        public async Task SendMessage(string user, string message)
+        private readonly string _botUser;
+        public ChatHub()
         {
-            await Clients.All.SendAsync("ReceiveMessage", user, message);
+            _botUser = "MyChat bot";
+        } 
+        public async Task JoinRoom(UserConnection userConnection)
+        {
+            await Groups.AddToGroupAsync(Context.ConnectionId, userConnection.Room);
+
+            await Clients.Group(userConnection.Room).SendAsync("ReceiveMessage", _botUser,
+                $"{userConnection.User} has joined {userConnection.Room}");
         }
+
     }
 }

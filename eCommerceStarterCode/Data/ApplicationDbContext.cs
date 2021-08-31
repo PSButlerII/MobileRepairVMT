@@ -22,8 +22,7 @@ namespace MobileRepairMT.Data
         public DbSet<ProductShoppingCart> ProductShoppingCarts { get; set; }
         public DbSet<ServiceShoppingCart> ServiceShoppingCarts { get; set; }
         public DbSet<ShopService> ShopServices { get; set; }
-        public DbSet<Message> Messages { get; set; }
-        public DbSet<ChatRoom> ChatRooms { get; set; }
+      
        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
