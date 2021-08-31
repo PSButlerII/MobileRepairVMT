@@ -41,7 +41,7 @@ namespace MobileRepairMT
                 {
                     builder.WithOrigins("http://localhost:3000")
                     .AllowAnyHeader()
-                    .SetIsOriginAllowedToAllowWildcardSubdomains()
+                    .AllowCredentials()
                     .AllowAnyMethod();
 
                 });
@@ -64,7 +64,7 @@ namespace MobileRepairMT
                 ForwardedHeaders = ForwardedHeaders.All
             });
             app.UseRouting();
-            app.UseCors();
+            app.UseCors("CorsPolicy");
             app.UseAuthentication();
             app.UseAuthorization();
 

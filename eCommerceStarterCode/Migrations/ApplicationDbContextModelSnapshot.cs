@@ -48,15 +48,15 @@ namespace MobileRepairMT.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "b5a22ab8-6eb0-42dc-b76c-f974917483be",
-                            ConcurrencyStamp = "859cc574-47ce-4a1a-881c-f08044b96896",
+                            Id = "fb415c89-e1d9-4751-835a-e5e6c45fea01",
+                            ConcurrencyStamp = "67bed00d-1863-43a2-979d-f9f4a88276f8",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "d706fefa-690b-41a3-b51c-213410a30d79",
-                            ConcurrencyStamp = "7ddb13da-e3ee-46a4-aa22-487db78bacb0",
+                            Id = "f836d69b-790a-4b46-ba4b-fc2053755839",
+                            ConcurrencyStamp = "43a16376-a02f-4f13-b17a-02002749a072",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });

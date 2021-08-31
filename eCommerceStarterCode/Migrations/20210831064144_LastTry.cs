@@ -26,12 +26,12 @@ namespace MobileRepairMT.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "b5a22ab8-6eb0-42dc-b76c-f974917483be", "859cc574-47ce-4a1a-881c-f08044b96896", "User", "USER" });
+                values: new object[] { "fb415c89-e1d9-4751-835a-e5e6c45fea01", "67bed00d-1863-43a2-979d-f9f4a88276f8", "User", "USER" });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "d706fefa-690b-41a3-b51c-213410a30d79", "7ddb13da-e3ee-46a4-aa22-487db78bacb0", "Admin", "ADMIN" });
+                values: new object[] { "f836d69b-790a-4b46-ba4b-fc2053755839", "43a16376-a02f-4f13-b17a-02002749a072", "Admin", "ADMIN" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -39,12 +39,12 @@ namespace MobileRepairMT.Migrations
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "b5a22ab8-6eb0-42dc-b76c-f974917483be");
+                keyValue: "f836d69b-790a-4b46-ba4b-fc2053755839");
 
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "d706fefa-690b-41a3-b51c-213410a30d79");
+                keyValue: "fb415c89-e1d9-4751-835a-e5e6c45fea01");
 
             migrationBuilder.CreateTable(
                 name: "ChatRooms",
