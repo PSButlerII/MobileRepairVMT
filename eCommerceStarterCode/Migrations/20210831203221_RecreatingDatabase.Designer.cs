@@ -10,8 +10,8 @@ using MobileRepairMT.Data;
 namespace MobileRepairMT.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210831064144_LastTry")]
-    partial class LastTry
+    [Migration("20210831203221_RecreatingDatabase")]
+    partial class RecreatingDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -50,15 +50,15 @@ namespace MobileRepairMT.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "fb415c89-e1d9-4751-835a-e5e6c45fea01",
-                            ConcurrencyStamp = "67bed00d-1863-43a2-979d-f9f4a88276f8",
+                            Id = "6a40bcaa-5ae1-40bb-ba94-c4420e7b45e6",
+                            ConcurrencyStamp = "66281880-e6cf-4a60-b2c2-34c910078197",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "f836d69b-790a-4b46-ba4b-fc2053755839",
-                            ConcurrencyStamp = "43a16376-a02f-4f13-b17a-02002749a072",
+                            Id = "fbbee4ee-350a-490a-bd1c-6463a827e0b7",
+                            ConcurrencyStamp = "dbae7349-b2f3-4319-aabf-9ebc1a62b873",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -669,6 +669,9 @@ namespace MobileRepairMT.Migrations
 
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsOwner")
+                        .HasColumnType("bit");
 
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");

@@ -1,4 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
+using System.Threading.Tasks;
+using System.Web.Http.ModelBinding;
 
 namespace MobileRepairMT.DataTransferObjects
 {
@@ -12,5 +15,7 @@ namespace MobileRepairMT.DataTransferObjects
         public string Password { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
+        public bool IsOwner { get; set; }
+
     }
 }
