@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MobileRepairMT.Data;
 
 namespace MobileRepairMT.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210902153831_updateDataBaseFields")]
+    partial class updateDataBaseFields
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,15 +50,15 @@ namespace MobileRepairMT.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "5f55097c-773f-442e-bbdd-ee58e9eff995",
-                            ConcurrencyStamp = "f91a5763-c430-480d-83d0-c8ddee5b9198",
+                            Id = "3e4eeb6b-0a91-45c8-8ff3-ea97230b065a",
+                            ConcurrencyStamp = "fda1c107-aa0d-4f1b-a747-fae77476ad74",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "95b33004-79e7-41f9-a5fc-e3625c07065b",
-                            ConcurrencyStamp = "438f30f3-394a-4106-aeff-888fce7655e0",
+                            Id = "b0eaa069-6de3-49d9-9bb2-bf7b7a3cfbdd",
+                            ConcurrencyStamp = "87224352-fc1f-48c8-9d23-6264f815b6ce",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
