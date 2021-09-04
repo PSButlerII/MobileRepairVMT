@@ -31,5 +31,16 @@ namespace MobileRepairMT.Controllers
             }
             return Ok(user);
         }
+        [HttpGet("user")]
+        public IActionResult GetAllUser()
+        {
+            var userId = User.FindAll("id");
+            var user = _context.Users.Find(userId);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            return Ok(user);
+        }
     }
 }

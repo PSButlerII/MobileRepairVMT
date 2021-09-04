@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 
+
+
 namespace MobileRepairMT.Models
 {
     public class Product
@@ -12,6 +14,8 @@ namespace MobileRepairMT.Models
         public string Name { get; set; }       
         public string Description { get; set; }
         public double Price { get; set; }
+        public string ImageName { get; set; }
+        
         public ICollection<ProductShoppingCart> ShoppingCarts { get; set; }
         public ICollection<Review> Reviews { get; set; }       
     }

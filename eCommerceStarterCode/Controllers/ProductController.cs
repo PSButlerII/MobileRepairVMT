@@ -48,7 +48,13 @@ namespace MobileRepairMT.Controllers
             _context.SaveChanges();
             return StatusCode(201, value);
         }
-        
+        [HttpPut("{id}"), Authorize]
+        public IActionResult Put([FromBody]Product value)
+        {
+            _context.Products.Update(value);
+            _context.SaveChanges();
+            return StatusCode(200, value);
+        }
 
         // delete product by id TESTED 
         [HttpDelete("{id}")]
