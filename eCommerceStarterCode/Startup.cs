@@ -9,7 +9,7 @@ using MobileRepairMT.Contracts;
 using MobileRepairMT.Extensions;
 using MobileRepairMT.Hubs;
 using MobileRepairMT.Managers;
-
+using System.Collections.Generic;
 
 namespace MobileRepairMT
 {
@@ -39,12 +39,15 @@ namespace MobileRepairMT
             {
                 options.AddDefaultPolicy(builder =>
                 {
-                    const string Origins = "http://localhost:3000";
-                    builder.WithOrigins(Origins);
-                   
+                    builder.WithOrigins("http://localhost:3000")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowCredentials();
+
 
                 });
             });
+            services.AddSingleton<IDictionary<string, UserConnection>>(opts => new Dictionary<string, UserConnection>());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,20 +60,22 @@ namespace MobileRepairMT
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            
+            app.UseRouting();
+            app.UseCors();
+
             app.UseForwardedHeaders(new ForwardedHeadersOptions
             {
                 ForwardedHeaders = ForwardedHeaders.All
             });
             app.UseRouting();
-            app.UseCors("CorsPolicy");
+            app.UseCors();
             app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                endpoints.MapHub<ChatHub>("/chatHub");
+                endpoints.MapHub<ChatHub>("/ChatHub");
             });
         }
     }

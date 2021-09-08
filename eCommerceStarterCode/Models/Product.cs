@@ -14,7 +14,7 @@ namespace MobileRepairMT.Models
         public string Name { get; set; }       
         public string Description { get; set; }
         public double Price { get; set; }
-        public string ImageName { get; set; }
+        public string Image { get; set; }
         
         public ICollection<ProductShoppingCart> ShoppingCarts { get; set; }
         public ICollection<Review> Reviews { get; set; }       
