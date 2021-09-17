@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MobileRepairMT.Data;
 
 namespace MobileRepairMT.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210916234854_updateDatabaseTableNames")]
+    partial class updateDatabaseTableNames
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,15 +50,15 @@ namespace MobileRepairMT.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "75122f24-baf1-4dce-92db-1e7539d4be8d",
-                            ConcurrencyStamp = "289925c6-c477-4a2b-ac74-50078075c0ae",
+                            Id = "54467362-f005-41bb-bfd6-56b4ddba45c7",
+                            ConcurrencyStamp = "a6691417-2a35-49e8-b67e-f2ce51b3fd60",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "3511815d-b0e3-491b-a85a-bc4864aa1a88",
-                            ConcurrencyStamp = "8b6c892e-f202-4ab9-9146-ecaf8b4b67ea",
+                            Id = "04dd2299-0011-4808-979e-91b98caece77",
+                            ConcurrencyStamp = "9cff8cd4-1599-4492-b1b1-4bfbad9bfd92",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -308,8 +310,8 @@ namespace MobileRepairMT.Migrations
                     b.Property<string>("VehicleMake")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<float>("VehicleMileage")
-                        .HasColumnType("real");
+                    b.Property<double>("VehicleMileage")
+                        .HasColumnType("float");
 
                     b.Property<string>("VehicleModel")
                         .HasColumnType("nvarchar(max)");

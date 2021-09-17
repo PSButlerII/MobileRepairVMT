@@ -25,16 +25,16 @@ namespace MobileRepairMT.Controllers
         public ActionResult<string> Get()
         {
             {
-                var employeeLtis = _context.Ltis;
+                var employeeLtis = _context.EmployeeLtis;
                 return Ok(employeeLtis);
             }
         }
 
         // GET api/<EmployeeLtisController>/5
-        [HttpGet("{id}")]
-        public IActionResult GetProductById(int id)
+        [HttpGet("{LtiId}")]
+        public IActionResult GetLTIById(int LtiId)
         {
-            var employeeLtis = _context.Ltis.Find(id);
+            var employeeLtis = _context.EmployeeLtis.FirstOrDefault(eu => eu.LtiId == LtiId);
             if (employeeLtis == null)
             {
                 return NotFound();
@@ -43,18 +43,18 @@ namespace MobileRepairMT.Controllers
         }
         // POST api/<EmployeeLtisController>
         [HttpPost, Authorize]
-        public IActionResult Post([FromBody] Lti value)
+        public IActionResult Post([FromBody] EmployeeLti value)
         {
-            _context.Ltis.Add(value);
+            _context.EmployeeLtis.Add(value);
             _context.SaveChanges();
             return StatusCode(201, value);
         }
 
         // PUT api/<EmployeeLtisController>/5
         [HttpPut("{id}")]
-        public IActionResult Put([FromBody] Lti value)
+        public IActionResult Put([FromBody] EmployeeLti value)
         {
-            _context.Ltis.Update(value);
+            _context.EmployeeLtis.Update(value);
             _context.SaveChanges();
             return StatusCode(201, value);
         }
@@ -65,8 +65,8 @@ namespace MobileRepairMT.Controllers
         [HttpDelete("{id}")]
         public IActionResult Remove(int id)
         {
-            var LtiGone = _context.Ltis.Find(id);
-            _context.Ltis.Remove(LtiGone);
+            var LtiGone = _context.EmployeeLtis.Find(id);
+            _context.EmployeeLtis.Remove(LtiGone);
             _context.SaveChanges();
             return Ok(LtiGone);
         }

@@ -10,8 +10,8 @@ using MobileRepairMT.Data;
 namespace MobileRepairMT.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210914060151_newTable")]
-    partial class newTable
+    [Migration("20210917003738_updateDatabaseTableCustomLtiMilageDataTypeTofloat")]
+    partial class updateDatabaseTableCustomLtiMilageDataTypeTofloat
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -50,15 +50,15 @@ namespace MobileRepairMT.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "7fde75a7-fd67-403a-8318-4b218d2c4a95",
-                            ConcurrencyStamp = "65e28827-60e7-4301-8821-86f724b7f54f",
+                            Id = "75122f24-baf1-4dce-92db-1e7539d4be8d",
+                            ConcurrencyStamp = "289925c6-c477-4a2b-ac74-50078075c0ae",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "c03e5c86-05ad-45e6-9992-b3405d5d66d8",
-                            ConcurrencyStamp = "e7e9a054-50b7-49cd-ab1d-accdefd0a4c8",
+                            Id = "3511815d-b0e3-491b-a85a-bc4864aa1a88",
+                            ConcurrencyStamp = "8b6c892e-f202-4ab9-9146-ecaf8b4b67ea",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -170,7 +170,7 @@ namespace MobileRepairMT.Migrations
 
             modelBuilder.Entity("MobileRepairMT.Models.CustomerLti", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("CustomerLtiId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -310,8 +310,8 @@ namespace MobileRepairMT.Migrations
                     b.Property<string>("VehicleMake")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("VehicleMileage")
-                        .HasColumnType("int");
+                    b.Property<float>("VehicleMileage")
+                        .HasColumnType("real");
 
                     b.Property<string>("VehicleModel")
                         .HasColumnType("nvarchar(max)");
@@ -319,8 +319,8 @@ namespace MobileRepairMT.Migrations
                     b.Property<string>("VehicleYear")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("VinNumber")
-                        .HasColumnType("int");
+                    b.Property<string>("VinNumber")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Wheels")
                         .HasColumnType("nvarchar(max)");
@@ -328,7 +328,7 @@ namespace MobileRepairMT.Migrations
                     b.Property<string>("Wiring")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("CustomerLtiId");
 
                     b.HasIndex("OwnerId");
 
@@ -337,7 +337,7 @@ namespace MobileRepairMT.Migrations
 
             modelBuilder.Entity("MobileRepairMT.Models.EmployeeLti", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("LtiId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -477,8 +477,8 @@ namespace MobileRepairMT.Migrations
                     b.Property<string>("VehicleMake")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("VehicleMileage")
-                        .HasColumnType("int");
+                    b.Property<double>("VehicleMileage")
+                        .HasColumnType("float");
 
                     b.Property<string>("VehicleModel")
                         .HasColumnType("nvarchar(max)");
@@ -486,8 +486,8 @@ namespace MobileRepairMT.Migrations
                     b.Property<string>("VehicleYear")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("VinNumber")
-                        .HasColumnType("int");
+                    b.Property<string>("VinNumber")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Wheels")
                         .HasColumnType("nvarchar(max)");
@@ -495,11 +495,11 @@ namespace MobileRepairMT.Migrations
                     b.Property<string>("Wiring")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("LtiId");
 
                     b.HasIndex("OwnerId");
 
-                    b.ToTable("Ltis");
+                    b.ToTable("EmployeeLtis");
                 });
 
             modelBuilder.Entity("MobileRepairMT.Models.Product", b =>

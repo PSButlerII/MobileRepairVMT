@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,13 +9,14 @@ namespace MobileRepairMT.Models
 {
     public class EmployeeLti
     {
-        public int Id { get; set; }
+        [Key]
+        public int LtiId { get; set; }
         public string TypeOfVehicle { get; set; }        
         public string VehicleYear { get; set; }
         public string VehicleMake { get; set; }
         public string VehicleModel { get; set; }
-        public int VehicleMileage { get; set; }
-        public int VinNumber { get; set; }
+        public double VehicleMileage { get; set; }
+        public string VinNumber { get; set; }
         public string Engine { get; set; }
         public string Clutch { get; set; }
         public string Carburetor { get; set; }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MobileRepairMT.Data;
 
 namespace MobileRepairMT.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210916225820_UpdateModels")]
+    partial class UpdateModels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,15 +50,15 @@ namespace MobileRepairMT.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "75122f24-baf1-4dce-92db-1e7539d4be8d",
-                            ConcurrencyStamp = "289925c6-c477-4a2b-ac74-50078075c0ae",
+                            Id = "3e00fe5b-bcc5-4cfd-b42c-629b3835dd57",
+                            ConcurrencyStamp = "ef7cb16c-88af-4ee8-9a42-2961ced71892",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "3511815d-b0e3-491b-a85a-bc4864aa1a88",
-                            ConcurrencyStamp = "8b6c892e-f202-4ab9-9146-ecaf8b4b67ea",
+                            Id = "b279b838-e498-443a-8d7d-8925fdebd8be",
+                            ConcurrencyStamp = "a3ec227a-0434-4cdb-8d43-a315d4fe9b13",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -308,8 +310,8 @@ namespace MobileRepairMT.Migrations
                     b.Property<string>("VehicleMake")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<float>("VehicleMileage")
-                        .HasColumnType("real");
+                    b.Property<double>("VehicleMileage")
+                        .HasColumnType("float");
 
                     b.Property<string>("VehicleModel")
                         .HasColumnType("nvarchar(max)");
@@ -333,7 +335,7 @@ namespace MobileRepairMT.Migrations
                     b.ToTable("CustomerLtis");
                 });
 
-            modelBuilder.Entity("MobileRepairMT.Models.EmployeeLti", b =>
+            modelBuilder.Entity("MobileRepairMT.Models.Lti", b =>
                 {
                     b.Property<int>("LtiId")
                         .ValueGeneratedOnAdd()
@@ -475,8 +477,8 @@ namespace MobileRepairMT.Migrations
                     b.Property<string>("VehicleMake")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("VehicleMileage")
-                        .HasColumnType("float");
+                    b.Property<int>("VehicleMileage")
+                        .HasColumnType("int");
 
                     b.Property<string>("VehicleModel")
                         .HasColumnType("nvarchar(max)");
@@ -484,8 +486,8 @@ namespace MobileRepairMT.Migrations
                     b.Property<string>("VehicleYear")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("VinNumber")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("VinNumber")
+                        .HasColumnType("int");
 
                     b.Property<string>("Wheels")
                         .HasColumnType("nvarchar(max)");
@@ -497,7 +499,7 @@ namespace MobileRepairMT.Migrations
 
                     b.HasIndex("OwnerId");
 
-                    b.ToTable("EmployeeLtis");
+                    b.ToTable("Ltis");
                 });
 
             modelBuilder.Entity("MobileRepairMT.Models.Product", b =>
@@ -780,7 +782,7 @@ namespace MobileRepairMT.Migrations
                     b.Navigation("Owner");
                 });
 
-            modelBuilder.Entity("MobileRepairMT.Models.EmployeeLti", b =>
+            modelBuilder.Entity("MobileRepairMT.Models.Lti", b =>
                 {
                     b.HasOne("MobileRepairMT.Models.User", "Owner")
                         .WithMany()

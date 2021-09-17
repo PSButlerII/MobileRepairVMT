@@ -31,15 +31,15 @@ namespace MobileRepairMT.Controllers
         }
 
         // GET api/<CustomerLtisController>/5
-        [HttpGet("{id}")]
-        public IActionResult GetProductById(int id)
+        [HttpGet("{CustomerLtiId}")]
+        public IActionResult GetLtiById(int CustomerLtiId)
         {
-            var customerLtis = _context.CustomerLtis.Find(id);
-            if (customerLtis == null)
+            var customerLti = _context.CustomerLtis.FirstOrDefault(cu => cu.CustomerLtiId == CustomerLtiId);
+            if (customerLti == null)
             {
                 return NotFound();
             }
-            return Ok(customerLtis);
+            return Ok(customerLti);
         }
         // POST api/<CustomerLtisController>
         [HttpPost, Authorize]
@@ -51,7 +51,7 @@ namespace MobileRepairMT.Controllers
         }
 
         // PUT api/<CustomerLtisController>/5
-        [HttpPut("{id}")]
+        [HttpPut("{id}"), Authorize]
         public IActionResult Put([FromBody] CustomerLti value)
         {
             _context.CustomerLtis.Update(value);
